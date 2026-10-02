@@ -4,797 +4,1033 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RFantazia Lounge & Restaurant — Hotel & Events</title>
+<title>RFantazia — Lounge, Restaurant, Hotel & Events</title>
 
-<meta
-  name="description"
-  content="RFantazia Lounge & Restaurant — Lounge, Restaurant, Hotel and Events in Effurun GRA, Delta State."
->
+<meta name="description"
+content="RFantazia Lounge & Restaurant — a luxury lounge, restaurant, hotel and events destination in Effurun, Delta State.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  font-family: "DM Sans", sans-serif;
-  background: #0d0b09;
-  color: #f5efe6;
-  line-height: 1.6;
-  overflow-x: hidden;
+body{
+  font-family:"DM Sans",sans-serif;
+  background:#0b0907;
+  color:#f5efe6;
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
-img {
-  width: 100%;
-  display: block;
+img{
+  width:100%;
+  display:block;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-button {
-  font: inherit;
+button{
+  font-family:inherit;
 }
 
 
-/* =========================================================
+/* =====================================================
    VARIABLES
-========================================================= */
+===================================================== */
 
-:root {
-  --black: #0d0b09;
-  --dark: #15110d;
-  --dark2: #1b1510;
-  --gold: #c59a55;
-  --gold-light: #e0bd7a;
-  --cream: #f5efe6;
-  --muted: #aaa096;
-  --line: rgba(255,255,255,.12);
+:root{
+  --black:#0b0907;
+  --dark:#120f0c;
+  --dark2:#1a1510;
+  --gold:#c7a66a;
+  --gold2:#e0c28b;
+  --cream:#f4eee5;
+  --muted:#a79e94;
+  --line:rgba(255,255,255,.12);
 }
 
 
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 20px 6%;
-  transition: .4s ease;
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  padding:20px 6%;
+  transition:.4s ease;
 }
 
-header.scrolled {
-  background: rgba(13,11,9,.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--line);
+header.scrolled{
+  background:rgba(10,8,6,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
 }
 
-.navbar {
-  max-width: 1400px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 3px;
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:31px;
+  letter-spacing:3px;
+  font-weight:600;
 }
 
-.logo span {
-  color: var(--gold-light);
+.logo span{
+  color:var(--gold2);
 }
 
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
 
-.nav-links a {
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #eee5d9;
-  transition: .3s;
+.nav-links a{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  color:#eee7df;
+  transition:.3s;
 }
 
-.nav-links a:hover {
-  color: var(--gold-light);
+.nav-links a:hover{
+  color:var(--gold2);
 }
 
-.call-btn {
-  padding: 11px 18px;
-  border: 1px solid rgba(197,154,85,.7);
-  color: var(--gold-light) !important;
+.nav-call{
+  border:1px solid rgba(199,166,106,.7);
+  padding:10px 17px;
+  color:var(--gold2)!important;
 }
 
-.menu-btn {
-  display: none;
-  border: 0;
-  background: transparent;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
+.menu-button{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:27px;
+  cursor:pointer;
 }
 
 
-/* =========================================================
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(10,8,6,.98);
+  padding:110px 9%;
+  display:none;
+}
+
+.mobile-menu.active{
+  display:block;
+}
+
+.mobile-menu a{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:42px;
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
+}
+
+.close-menu{
+  position:absolute;
+  top:25px;
+  right:7%;
+  border:0;
+  background:none;
+  color:white;
+  font-size:35px;
+}
+
+
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 120px 7% 90px;
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  padding:140px 7% 90px;
+
   background:
-    linear-gradient(
-      90deg,
-      rgba(8,6,5,.88) 0%,
-      rgba(8,6,5,.60) 45%,
-      rgba(8,6,5,.25) 100%
-    ),
-    url("images/exterior.webp") center/cover no-repeat;
+  linear-gradient(
+    90deg,
+    rgba(7,5,4,.9),
+    rgba(7,5,4,.55),
+    rgba(7,5,4,.18)
+  ),
+  url("images/exterior.webp") center/cover no-repeat;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+
   background:
-    linear-gradient(
-      to top,
-      rgba(13,11,9,.92),
-      transparent 50%
-    );
+  linear-gradient(
+    to top,
+    rgba(7,5,4,.95),
+    transparent 65%
+  );
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:750px;
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 11px;
-  color: var(--gold-light);
-  margin-bottom: 20px;
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  color:var(--gold2);
+  margin-bottom:20px;
 }
 
-.hero h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(65px, 9vw, 125px);
-  line-height: .82;
-  font-weight: 500;
-  margin-bottom: 28px;
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(70px,9vw,125px);
+  line-height:.8;
+  font-weight:500;
+  margin-bottom:30px;
 }
 
-.hero p {
-  max-width: 600px;
-  color: #d0c8be;
-  font-size: 17px;
-  font-weight: 300;
+.hero p{
+  color:#d3cbc1;
+  max-width:600px;
+  font-size:17px;
+  font-weight:300;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  margin-top: 35px;
-  flex-wrap: wrap;
+.hero-buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:35px;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 25px;
-  border: 1px solid var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 11px;
-  transition: .3s;
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 25px;
+  border:1px solid var(--gold);
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  font-size:11px;
+  transition:.3s;
+  cursor:pointer;
 }
 
-.btn-primary {
-  background: var(--gold);
-  color: #16100b;
+.btn-gold{
+  background:var(--gold);
+  color:#171109;
 }
 
-.btn-primary:hover {
-  background: var(--gold-light);
+.btn-gold:hover{
+  background:var(--gold2);
 }
 
-.btn-outline {
-  color: white;
+.btn-outline{
+  color:white;
 }
 
-.btn-outline:hover {
-  background: white;
-  color: #111;
-}
-
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
-section {
-  padding: 110px 7%;
-}
-
-.section-inner {
-  max-width: 1300px;
-  margin: auto;
-}
-
-.section-label {
-  color: var(--gold-light);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 11px;
-  margin-bottom: 14px;
-}
-
-.section-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(45px, 6vw, 75px);
-  line-height: .95;
-  font-weight: 500;
-}
-
-.section-description {
-  max-width: 600px;
-  color: var(--muted);
-  margin-top: 20px;
+.btn-outline:hover{
+  background:white;
+  color:#111;
 }
 
 
-/* =========================================================
-   QUICK LINKS
-========================================================= */
+/* =====================================================
+   SECTION BASICS
+===================================================== */
 
-.quick-links {
-  background: #12100d;
-  padding-top: 35px;
-  padding-bottom: 35px;
+section{
+  padding:110px 7%;
 }
 
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+.container{
+  max-width:1300px;
+  margin:auto;
 }
 
-.quick-card {
-  padding: 30px;
-  border-right: 1px solid var(--line);
-  transition: .3s;
+.section-label{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:11px;
+  margin-bottom:15px;
 }
 
-.quick-card:last-child {
-  border-right: none;
+.light-label{
+  color:#916e37;
 }
 
-.quick-card:hover {
-  background: #191510;
+.section-title{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+  font-size:clamp(48px,6vw,76px);
+  line-height:.95;
 }
 
-.quick-card small {
-  color: var(--gold-light);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 10px;
-}
-
-.quick-card h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 32px;
-  font-weight: 500;
-  margin: 5px 0;
-}
-
-.quick-card span {
-  color: #9d958d;
-  font-size: 13px;
+.section-text{
+  color:var(--muted);
+  max-width:610px;
+  margin-top:20px;
 }
 
 
-/* =========================================================
+/* =====================================================
+   QUICK NAV
+===================================================== */
+
+.quick-nav{
+  background:#11100d;
+  padding-top:35px;
+  padding-bottom:35px;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.quick-item{
+  padding:30px;
+  border-right:1px solid var(--line);
+  transition:.3s;
+}
+
+.quick-item:last-child{
+  border-right:0;
+}
+
+.quick-item:hover{
+  background:#191510;
+}
+
+.quick-number{
+  color:var(--gold2);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.quick-item h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:34px;
+  font-weight:500;
+  margin:4px 0;
+}
+
+.quick-item p{
+  color:#8f8982;
+  font-size:13px;
+}
+
+
+/* =====================================================
    RESTAURANT
-========================================================= */
+===================================================== */
 
-.restaurant {
-  background: #f2ede5;
-  color: #17120e;
+.restaurant{
+  background:var(--cream);
+  color:#17120e;
 }
 
-.restaurant .section-label {
-  color: #8e682f;
+.food-grid{
+  margin-top:55px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
 }
 
-.restaurant .section-description {
-  color: #756f68;
+.food-card{
+  min-height:540px;
+  position:relative;
+  overflow:hidden;
+  background:#222;
 }
 
-.food-grid {
-  margin-top: 55px;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 25px;
+.food-card img{
+  height:100%;
+  min-height:540px;
+  object-fit:cover;
+  transition:.7s;
 }
 
-.food-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 550px;
-  background: #222;
+.food-card:hover img{
+  transform:scale(1.06);
 }
 
-.food-card img {
-  height: 100%;
-  min-height: 550px;
-  object-fit: cover;
-  transition: transform .7s ease;
+.food-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.8),
+    transparent 65%
+  );
 }
 
-.food-card:hover img {
-  transform: scale(1.05);
+.food-info{
+  position:absolute;
+  z-index:2;
+  left:35px;
+  right:35px;
+  bottom:30px;
+  color:white;
 }
 
-.food-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 35px;
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.82),
-      transparent 65%
-    );
-  color: white;
+.food-info h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:43px;
+  font-weight:500;
 }
 
-.food-overlay h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
-  font-weight: 500;
-}
-
-.food-overlay p {
-  color: #ddd;
+.food-info p{
+  color:#ddd;
 }
 
 
-/* =========================================================
+/* =====================================================
    COCKTAIL
-========================================================= */
+===================================================== */
 
-.cocktail {
-  background: #17120e;
+.cocktails{
+  background:#17120e;
 }
 
-.cocktail-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
+.cocktail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
 }
 
-.cocktail-text p {
-  margin-top: 25px;
-  color: var(--muted);
-  max-width: 520px;
+.cocktail-copy p{
+  max-width:530px;
+  color:var(--muted);
+  margin-top:25px;
 }
 
-.cocktail-image {
-  height: 600px;
-  overflow: hidden;
+.cocktail-photo{
+  height:600px;
+  overflow:hidden;
 }
 
-.cocktail-image img {
-  height: 100%;
-  object-fit: cover;
-}
-
-
-/* =========================================================
-   TERRACE
-========================================================= */
-
-.terrace {
-  padding: 0;
-  position: relative;
-}
-
-.terrace img {
-  height: 650px;
-  object-fit: cover;
-  filter: brightness(.65);
-}
-
-.terrace-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-}
-
-.terrace-content h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(55px,8vw,100px);
-  font-weight: 500;
+.cocktail-photo img{
+  height:100%;
+  object-fit:cover;
 }
 
 
-/* =========================================================
-   HOTEL / EVENTS
-========================================================= */
+/* =====================================================
+   FULL IMAGE SECTION
+===================================================== */
 
-.experiences {
-  background: #f4eee5;
-  color: #17120e;
+.full-image{
+  padding:0;
+  position:relative;
 }
 
-.experience-grid {
-  margin-top: 55px;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+.full-image img{
+  height:650px;
+  object-fit:cover;
+  filter:brightness(.62);
 }
 
-.experience {
-  border: 1px solid #d9d0c4;
-  padding: 35px;
-  min-height: 280px;
-  transition: .3s;
+.full-image-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
 }
 
-.experience:hover {
-  background: #e9dfd1;
-  transform: translateY(-5px);
-}
-
-.experience-number {
-  color: #92703b;
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-.experience h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
-  margin: 30px 0 10px;
-  font-weight: 500;
-}
-
-.experience p {
-  color: #756f68;
-  font-size: 14px;
+.full-image-content h2{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+  font-size:clamp(55px,8vw,105px);
+  line-height:.9;
 }
 
 
-/* =========================================================
-   LOCATION
-========================================================= */
+/* =====================================================
+   HOTEL
+===================================================== */
 
-.location {
-  background: #0c0a08;
+.hotel{
+  background:#f3ede4;
+  color:#17120e;
 }
 
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.hotel-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  margin-top:60px;
 }
 
-.location-info h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 65px;
-  font-weight: 500;
-  line-height: .95;
+.hotel-photo{
+  height:570px;
+  overflow:hidden;
 }
 
-.location-info p {
-  color: var(--muted);
-  margin-top: 25px;
-  max-width: 550px;
+.hotel-photo img{
+  height:100%;
+  object-fit:cover;
 }
 
-.contact-line {
-  margin-top: 35px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.hotel-copy p{
+  color:#716a62;
+  margin-top:22px;
+  max-width:530px;
 }
 
-.contact-line strong {
-  color: var(--gold-light);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.hotel-features{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:35px;
 }
 
-.contact-line a {
-  font-size: 20px;
+.feature{
+  border-top:1px solid #d6cdc1;
+  padding-top:17px;
 }
 
-.map-box {
-  min-height: 420px;
+.feature strong{
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  font-weight:500;
+}
+
+.feature p{
+  font-size:12px;
+  margin-top:2px;
+}
+
+
+/* =====================================================
+   EVENTS
+===================================================== */
+
+.events{
+  background:#11100d;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:55px;
+}
+
+.event-card{
+  border:1px solid var(--line);
+  padding:35px;
+  min-height:300px;
+  transition:.3s;
+}
+
+.event-card:hover{
+  background:#191510;
+  transform:translateY(-5px);
+}
+
+.event-number{
+  color:var(--gold2);
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.event-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:38px;
+  font-weight:500;
+  margin:28px 0 10px;
+}
+
+.event-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+
+/* =====================================================
+   BOOKING
+===================================================== */
+
+.booking{
+  background:#f3ede4;
+  color:#17120e;
+}
+
+.booking-box{
+  max-width:950px;
+  margin:55px auto 0;
+  border:1px solid #d5cabb;
+  padding:45px;
+}
+
+.booking-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:#796f64;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #d4cabd;
+  background:#fffaf3;
+  padding:14px;
+  font-family:inherit;
+  outline:none;
+}
+
+.field textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#a78650;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery{
+  background:#0b0907;
+}
+
+.gallery-grid{
+  margin-top:55px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:190px;
+  gap:15px;
+}
+
+.gallery-item{
+  overflow:hidden;
+}
+
+.gallery-item img{
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.06);
+}
+
+.gallery-large{
+  grid-column:span 6;
+  grid-row:span 2;
+}
+
+.gallery-medium{
+  grid-column:span 3;
+  grid-row:span 2;
+}
+
+.gallery-small{
+  grid-column:span 3;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+  background:#f3ede4;
+  color:#17120e;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-copy p{
+  color:#706960;
+  margin-top:25px;
+  max-width:550px;
+}
+
+.about-list{
+  margin-top:30px;
+  border-top:1px solid #d5cbbd;
+}
+
+.about-row{
+  display:flex;
+  justify-content:space-between;
+  padding:18px 0;
+  border-bottom:1px solid #d5cbbd;
+  font-size:13px;
+}
+
+.about-row span:last-child{
+  color:#92703b;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+  background:#0c0a08;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.contact-copy h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:65px;
+  line-height:.9;
+  font-weight:500;
+}
+
+.contact-copy p{
+  color:var(--muted);
+  margin-top:25px;
+  max-width:530px;
+}
+
+.contact-detail{
+  margin-top:28px;
+}
+
+.contact-detail small{
+  color:var(--gold2);
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:10px;
+  margin-bottom:5px;
+}
+
+.contact-detail a,
+.contact-detail span{
+  font-size:19px;
+}
+
+.map{
+  min-height:430px;
   background:
     linear-gradient(
-      rgba(20,15,10,.45),
-      rgba(20,15,10,.45)
+      rgba(20,15,10,.4),
+      rgba(20,15,10,.4)
     ),
     url("images/exterior.webp") center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.map-box span {
-  background: rgba(10,8,6,.8);
-  padding: 15px 25px;
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
+.map a{
+  background:rgba(8,6,4,.85);
+  border:1px solid var(--gold);
+  color:var(--gold2);
+  padding:15px 25px;
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
-footer {
-  background: #080706;
-  padding: 60px 7% 30px;
-  border-top: 1px solid var(--line);
+footer{
+  background:#070605;
+  border-top:1px solid var(--line);
+  padding:60px 7% 30px;
 }
 
-.footer-grid {
-  max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 50px;
+.footer-grid{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
 }
 
-.footer-brand {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
+.footer-logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:43px;
 }
 
-.footer-brand span {
-  color: var(--gold);
+.footer-logo span{
+  color:var(--gold);
 }
 
-footer p {
-  color: #817a73;
-  font-size: 13px;
-  max-width: 400px;
-  margin-top: 15px;
+.footer-text{
+  color:#77716a;
+  max-width:420px;
+  margin-top:15px;
+  font-size:13px;
 }
 
-.footer-column h4 {
-  color: var(--gold-light);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
+.footer-column h4{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:10px;
+  margin-bottom:17px;
 }
 
-.footer-column a {
-  display: block;
-  color: #aaa29a;
-  margin-bottom: 10px;
-  font-size: 13px;
+.footer-column a{
+  display:block;
+  color:#9c958d;
+  font-size:13px;
+  margin-bottom:10px;
 }
 
-.footer-column a:hover {
-  color: white;
+.footer-column a:hover{
+  color:white;
 }
 
-.copyright {
-  max-width: 1300px;
-  margin: 50px auto 0;
-  padding-top: 25px;
-  border-top: 1px solid var(--line);
-  color: #625d58;
-  font-size: 11px;
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  background: rgba(12,9,7,.98);
-  z-index: 999;
-  display: none;
-  padding: 120px 8% 40px;
-}
-
-.mobile-menu.active {
-  display: block;
-}
-
-.mobile-menu a {
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 12px;
-}
-
-.close-menu {
-  position: absolute;
-  top: 25px;
-  right: 7%;
-  background: none;
-  border: 0;
-  color: white;
-  font-size: 32px;
+.copyright{
+  max-width:1300px;
+  margin:50px auto 0;
+  padding-top:25px;
+  border-top:1px solid var(--line);
+  color:#5f5a55;
+  font-size:10px;
 }
 
 
-/* =========================================================
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =====================================================
    RESPONSIVE
-========================================================= */
+===================================================== */
 
-@media(max-width:900px) {
+@media(max-width:950px){
 
-  .nav-links {
-    display: none;
+  .nav-links{
+    display:none;
   }
 
-  .menu-btn {
-    display: block;
+  .menu-button{
+    display:block;
   }
 
-  .hero {
-    padding: 110px 7% 70px;
-    min-height: 90vh;
+  .quick-grid{
+    grid-template-columns:1fr;
   }
 
-  .hero h1 {
-    font-size: 70px;
+  .quick-item{
+    border-right:0;
+    border-bottom:1px solid var(--line);
   }
 
-  .quick-grid {
-    grid-template-columns: 1fr;
+  .quick-item:last-child{
+    border-bottom:0;
   }
 
-  .quick-card {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
+  .food-grid,
+  .cocktail-grid,
+  .hotel-grid,
+  .contact-grid,
+  .about-grid{
+    grid-template-columns:1fr;
   }
 
-  .quick-card:last-child {
-    border-bottom: 0;
+  .event-grid{
+    grid-template-columns:1fr;
   }
 
-  .food-grid {
-    grid-template-columns: 1fr;
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:220px;
   }
 
-  .cocktail-layout,
-  .location-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .gallery-large,
+  .gallery-medium,
+  .gallery-small{
+    grid-column:span 1;
+    grid-row:span 1;
   }
 
-  .experience-grid {
-    grid-template-columns: 1fr;
+  .gallery-large{
+    grid-column:span 2;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .footer-grid{
+    grid-template-columns:1fr;
   }
 
 }
 
-@media(max-width:600px) {
+@media(max-width:600px){
 
-  header {
-    padding: 17px 6%;
+  header{
+    padding:17px 6%;
   }
 
-  .logo {
-    font-size: 24px;
+  .logo{
+    font-size:25px;
   }
 
-  section {
-    padding: 80px 6%;
+  section{
+    padding:80px 6%;
   }
 
-  .hero {
-    min-height: 100svh;
-    padding: 100px 6% 60px;
+  .hero{
+    min-height:100svh;
+    padding:110px 6% 60px;
   }
 
-  .hero h1 {
-    font-size: 58px;
+  .hero h1{
+    font-size:60px;
   }
 
-  .hero p {
-    font-size: 15px;
+  .hero p{
+    font-size:15px;
   }
 
   .food-card,
-  .food-card img {
-    min-height: 430px;
+  .food-card img{
+    min-height:420px;
   }
 
-  .cocktail-image {
-    height: 430px;
+  .cocktail-photo,
+  .hotel-photo{
+    height:430px;
   }
 
-  .terrace img {
-    height: 500px;
+  .full-image img{
+    height:500px;
   }
 
-  .location-info h2 {
-    font-size: 52px;
+  .contact-copy h2{
+    font-size:53px;
+  }
+
+  .booking-box{
+    padding:25px;
+  }
+
+  .booking-form{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .hotel-features{
+    grid-template-columns:1fr;
   }
 
 }
 
 
-/* =========================================================
-   FADE ANIMATION
-========================================================= */
+/* =====================================================
+   IMAGE FALLBACK
+===================================================== */
 
-.fade-up {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+img{
+  background:
+    linear-gradient(
+      135deg,
+      #30261c,
+      #0d0b09
+    );
 }
 
 </style>
@@ -804,9 +1040,9 @@ footer p {
 <body>
 
 
-<!-- ======================================================
+<!-- =====================================================
      HEADER
-======================================================= -->
+===================================================== -->
 
 <header id="header">
 
@@ -834,7 +1070,7 @@ footer p {
 
       <a
         href="tel:08147036310"
-        class="call-btn"
+        class="nav-call"
       >
         Call Now
       </a>
@@ -842,8 +1078,8 @@ footer p {
     </nav>
 
     <button
-      class="menu-btn"
-      id="menuBtn"
+      class="menu-button"
+      id="menuButton"
       aria-label="Open menu"
     >
       ☰
@@ -854,11 +1090,14 @@ footer p {
 </header>
 
 
-<!-- ======================================================
+<!-- =====================================================
      MOBILE MENU
-======================================================= -->
+===================================================== -->
 
-<div class="mobile-menu" id="mobileMenu">
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
 
   <button
     class="close-menu"
@@ -878,18 +1117,18 @@ footer p {
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      HERO
-======================================================= -->
+===================================================== -->
 
 <main id="home">
 
 <section class="hero">
 
-  <div class="hero-content fade-up">
+  <div class="hero-content reveal">
 
     <div class="eyebrow">
-      Lounge · Restaurant · Hotel
+      Lounge · Restaurant · Hotel · Events
     </div>
 
     <h1>
@@ -898,32 +1137,32 @@ footer p {
     </h1>
 
     <p>
-      A candlelit lounge where cocktails pour late,
-      plates stay full, and suites wait upstairs —
-      open 24 hours in Effurun GRA.
+      A refined destination where cocktails pour late,
+      plates stay full, celebrations come alive,
+      and comfortable rooms wait upstairs.
     </p>
 
-    <div class="hero-actions">
+    <div class="hero-buttons">
 
       <a
         href="#restaurant"
-        class="btn btn-primary"
+        class="btn btn-gold"
       >
-        Restaurant · Menu
+        Explore Restaurant
       </a>
 
       <a
         href="#events"
         class="btn btn-outline"
       >
-        Book the Lounge
+        Book an Event
       </a>
 
       <a
         href="#hotel"
         class="btn btn-outline"
       >
-        Stay the Night
+        Stay With Us
       </a>
 
     </div>
@@ -933,60 +1172,72 @@ footer p {
 </section>
 
 
-<!-- ======================================================
-     QUICK LINKS
-======================================================= -->
+<!-- =====================================================
+     QUICK NAVIGATION
+===================================================== -->
 
-<section class="quick-links">
+<section class="quick-nav">
 
-  <div class="section-inner">
+  <div class="container">
 
     <div class="quick-grid">
 
       <a
         href="#restaurant"
-        class="quick-card fade-up"
+        class="quick-item reveal"
       >
 
-        <small>01</small>
+        <div class="quick-number">
+          01
+        </div>
 
-        <h3>Restaurant</h3>
+        <h3>
+          Restaurant
+        </h3>
 
-        <span>
-          Dine in · Explore Menu →
-        </span>
+        <p>
+          Dine in · Explore the menu →
+        </p>
 
       </a>
 
 
       <a
         href="#events"
-        class="quick-card fade-up"
+        class="quick-item reveal"
       >
 
-        <small>02</small>
+        <div class="quick-number">
+          02
+        </div>
 
-        <h3>Events</h3>
+        <h3>
+          Events
+        </h3>
 
-        <span>
-          Book the lounge →
-        </span>
+        <p>
+          Birthdays · Celebrations · Private events →
+        </p>
 
       </a>
 
 
       <a
         href="#hotel"
-        class="quick-card fade-up"
+        class="quick-item reveal"
       >
 
-        <small>03</small>
+        <div class="quick-number">
+          03
+        </div>
 
-        <h3>Hotel</h3>
+        <h3>
+          Hotel
+        </h3>
 
-        <span>
+        <p>
           Stay the night →
-        </span>
+        </p>
 
       </a>
 
@@ -997,18 +1248,18 @@ footer p {
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      RESTAURANT
-======================================================= -->
+===================================================== -->
 
 <section
   class="restaurant"
   id="restaurant"
 >
 
-  <div class="section-inner">
+  <div class="container">
 
-    <div class="section-label">
+    <div class="section-label light-label">
       Restaurant
     </div>
 
@@ -1016,28 +1267,31 @@ footer p {
       Signature plates
     </h2>
 
-    <p class="section-description">
-      From rich Nigerian classics to late-night
-      favourites, every plate is made to keep
-      the evening going.
+    <p class="section-text">
+      Nigerian classics, rich sauces and satisfying
+      late-night favourites made for good evenings
+      and even better company.
     </p>
 
 
     <div class="food-grid">
 
-      <article class="food-card fade-up">
+      <article class="food-card reveal">
 
         <img
           src="images/goat-sauce.jpg"
-          alt="Goat Sauce"
+          alt="RFantazia Goat Sauce"
+          onerror="this.style.display='none'"
         >
 
-        <div class="food-overlay">
+        <div class="food-info">
 
-          <h3>Goat Sauce</h3>
+          <h3>
+            Goat Sauce
+          </h3>
 
           <p>
-            Slow-braised, golden broth
+            Rich · Slow cooked · Full of flavour
           </p>
 
         </div>
@@ -1045,19 +1299,22 @@ footer p {
       </article>
 
 
-      <article class="food-card fade-up">
+      <article class="food-card reveal">
 
         <img
           src="images/jollof-rice.jpg"
-          alt="Jollof Rice"
+          alt="RFantazia Jollof Rice"
+          onerror="this.style.display='none'"
         >
 
-        <div class="food-overlay">
+        <div class="food-info">
 
-          <h3>Jollof Rice</h3>
+          <h3>
+            Jollof Rice
+          </h3>
 
           <p>
-            Smoky, spiced, classic
+            Smoky · Spiced · Classic
           </p>
 
         </div>
@@ -1066,14 +1323,13 @@ footer p {
 
     </div>
 
-
     <div style="margin-top:35px">
 
       <a
         href="#contact"
-        class="btn btn-primary"
+        class="btn btn-gold"
       >
-        View All
+        Contact Restaurant
       </a>
 
     </div>
@@ -1083,17 +1339,17 @@ footer p {
 </section>
 
 
-<!-- ======================================================
-     COCKTAIL SECTION
-======================================================= -->
+<!-- =====================================================
+     COCKTAILS
+===================================================== -->
 
-<section class="cocktail">
+<section class="cocktails">
 
-  <div class="section-inner">
+  <div class="container">
 
-    <div class="cocktail-layout">
+    <div class="cocktail-grid">
 
-      <div class="cocktail-text fade-up">
+      <div class="cocktail-copy reveal">
 
         <div class="section-label">
           Cocktail Hour
@@ -1105,18 +1361,18 @@ footer p {
         </h2>
 
         <p>
-          Signature pours at the bar — from
-          golden spritzes to velvet nightcaps,
-          until the room fills.
+          Signature pours, chilled favourites and
+          late-night drinks served in an atmosphere
+          made for unwinding.
         </p>
 
         <div style="margin-top:30px">
 
           <a
-            href="#restaurant"
+            href="#contact"
             class="btn btn-outline"
           >
-            See the Menu
+            Enquire Now
           </a>
 
         </div>
@@ -1124,11 +1380,12 @@ footer p {
       </div>
 
 
-      <div class="cocktail-image fade-up">
+      <div class="cocktail-photo reveal">
 
         <img
           src="images/lounge.jpg"
           alt="RFantazia Lounge"
+          onerror="this.style.display='none'"
         >
 
       </div>
@@ -1140,21 +1397,19 @@ footer p {
 </section>
 
 
-<!-- ======================================================
-     TERRACE
-======================================================= -->
+<!-- =====================================================
+     ATMOSPHERE
+===================================================== -->
 
-<section
-  class="terrace"
-  id="gallery"
->
+<section class="full-image">
 
   <img
     src="images/terrace.webp"
-    alt="RFantazia Terrace"
+    alt="RFantazia terrace"
+    onerror="this.style.display='none'"
   >
 
-  <div class="terrace-content">
+  <div class="full-image-content">
 
     <div>
 
@@ -1163,7 +1418,8 @@ footer p {
       </div>
 
       <h2>
-        Stay for the atmosphere.
+        Stay for<br>
+        the atmosphere.
       </h2>
 
     </div>
@@ -1173,118 +1429,120 @@ footer p {
 </section>
 
 
-<!-- ======================================================
-     EXPERIENCES
-======================================================= -->
+<!-- =====================================================
+     HOTEL
+===================================================== -->
 
 <section
-  class="experiences"
+  class="hotel"
   id="hotel"
 >
 
-  <div class="section-inner">
+  <div class="container">
 
-    <div class="section-label">
-      The RFantazia Experience
+    <div class="section-label light-label">
+      Hotel
     </div>
 
     <h2 class="section-title">
-      More than a night out.
+      Stay the night.
     </h2>
 
-    <p class="section-description">
-      Dine, celebrate, relax and stay — all
-      under one roof.
-    </p>
+    <div class="hotel-grid">
+
+      <div class="hotel-photo reveal">
+
+        <img
+          src="images/interior.webp"
+          alt="RFantazia hotel interior"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
 
 
-    <div class="experience-grid">
+      <div class="hotel-copy reveal">
 
-      <article class="experience fade-up">
-
-        <span class="experience-number">
-          01 · HOTEL
-        </span>
-
-        <h3>
-          Stay the Night
-        </h3>
+        <h2 class="section-title">
+          Your evening<br>
+          doesn't have to end.
+        </h2>
 
         <p>
-          Comfortable rooms and suites for
-          guests who want to continue the
-          experience after the evening ends.
+          After dinner, drinks and celebrations,
+          settle into a comfortable stay at
+          RFantazia.
         </p>
 
-        <a
-          href="#contact"
-          class="btn"
-          style="margin-top:25px"
-        >
-          Hotel Details
-        </a>
 
-      </article>
+        <div class="hotel-features">
 
+          <div class="feature">
 
-      <article
-        class="experience fade-up"
-        id="events"
-      >
+            <strong>
+              Comfortable
+            </strong>
 
-        <span class="experience-number">
-          02 · EVENTS
-        </span>
+            <p>
+              Relax after a long evening.
+            </p>
 
-        <h3>
-          Book the Lounge
-        </h3>
-
-        <p>
-          Host birthdays, celebrations,
-          private gatherings and special
-          occasions at RFantazia.
-        </p>
-
-        <a
-          href="#contact"
-          class="btn"
-          style="margin-top:25px"
-        >
-          Book an Event
-        </a>
-
-      </article>
+          </div>
 
 
-      <article
-        class="experience fade-up"
-        id="about"
-      >
+          <div class="feature">
 
-        <span class="experience-number">
-          03 · LOUNGE
-        </span>
+            <strong>
+              Convenient
+            </strong>
 
-        <h3>
-          The Atmosphere
-        </h3>
+            <p>
+              Stay close to everything.
+            </p>
 
-        <p>
-          A warm evening atmosphere designed
-          around good food, drinks, music and
-          memorable moments.
-        </p>
+          </div>
 
-        <a
-          href="#gallery"
-          class="btn"
-          style="margin-top:25px"
-        >
-          View Gallery
-        </a>
 
-      </article>
+          <div class="feature">
+
+            <strong>
+              Private
+            </strong>
+
+            <p>
+              Space to unwind.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <strong>
+              24 Hours
+            </strong>
+
+            <p>
+              Your evening can continue.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div style="margin-top:35px">
+
+          <a
+            href="#contact"
+            class="btn btn-gold"
+          >
+            Enquire About Rooms
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -1293,20 +1551,517 @@ footer p {
 </section>
 
 
-<!-- ======================================================
-     LOCATION
-======================================================= -->
+<!-- =====================================================
+     EVENTS
+===================================================== -->
 
 <section
-  class="location"
+  class="events"
+  id="events"
+>
+
+  <div class="container">
+
+    <div class="section-label">
+      Events
+    </div>
+
+    <h2 class="section-title">
+      Make it a night<br>
+      to remember.
+    </h2>
+
+    <p class="section-text">
+      From intimate celebrations to lively parties,
+      RFantazia gives you the space to make your
+      occasion special.
+    </p>
+
+
+    <div class="event-grid">
+
+      <article class="event-card reveal">
+
+        <div class="event-number">
+          01 · BIRTHDAYS
+        </div>
+
+        <h3>
+          Birthday
+          Celebrations
+        </h3>
+
+        <p>
+          Bring your people together and
+          celebrate another year in style.
+        </p>
+
+      </article>
+
+
+      <article class="event-card reveal">
+
+        <div class="event-number">
+          02 · PRIVATE
+        </div>
+
+        <h3>
+          Private
+          Events
+        </h3>
+
+        <p>
+          Reserve space for private gatherings,
+          dinners and special occasions.
+        </p>
+
+      </article>
+
+
+      <article class="event-card reveal">
+
+        <div class="event-number">
+          03 · PARTIES
+        </div>
+
+        <h3>
+          Parties &
+          Celebrations
+        </h3>
+
+        <p>
+          Music, drinks, food and atmosphere
+          for nights worth remembering.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <div style="margin-top:45px">
+
+      <a
+        href="#booking"
+        class="btn btn-gold"
+      >
+        Book an Event
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING FORM
+===================================================== -->
+
+<section
+  class="booking"
+  id="booking"
+>
+
+  <div class="container">
+
+    <div style="text-align:center">
+
+      <div class="section-label light-label">
+        Event Enquiry
+      </div>
+
+      <h2 class="section-title">
+        Tell us about your event.
+      </h2>
+
+      <p
+        class="section-text"
+        style="margin-left:auto;margin-right:auto"
+      >
+        Send your event details and the RFantazia
+        team can follow up with you.
+      </p>
+
+    </div>
+
+
+    <div class="booking-box">
+
+      <form
+        class="booking-form"
+        id="eventForm"
+      >
+
+        <div class="field">
+
+          <label>
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            id="eventName"
+            placeholder="Your name"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Phone Number
+          </label>
+
+          <input
+            type="tel"
+            id="eventPhone"
+            placeholder="Your phone number"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Event Type
+          </label>
+
+          <select
+            id="eventType"
+            required
+          >
+
+            <option value="">
+              Select event type
+            </option>
+
+            <option>
+              Birthday
+            </option>
+
+            <option>
+              Private Party
+            </option>
+
+            <option>
+              Dinner
+            </option>
+
+            <option>
+              Corporate Event
+            </option>
+
+            <option>
+              Celebration
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Preferred Date
+          </label>
+
+          <input
+            type="date"
+            id="eventDate"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Number of Guests
+          </label>
+
+          <input
+            type="number"
+            id="eventGuests"
+            min="1"
+            placeholder="Number of guests"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Preferred Time
+          </label>
+
+          <input
+            type="time"
+            id="eventTime"
+          >
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>
+            Additional Details
+          </label>
+
+          <textarea
+            id="eventMessage"
+            placeholder="Tell us anything else about your event..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <button
+            type="submit"
+            class="btn btn-gold"
+          >
+            Send Event Enquiry
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section
+  class="gallery"
+  id="gallery"
+>
+
+  <div class="container">
+
+    <div class="section-label">
+      Gallery
+    </div>
+
+    <h2 class="section-title">
+      A glimpse inside.
+    </h2>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item gallery-large reveal">
+
+        <img
+          src="images/exterior.webp"
+          alt="RFantazia exterior"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
+
+
+      <div class="gallery-item gallery-medium reveal">
+
+        <img
+          src="images/interior.webp"
+          alt="RFantazia interior"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
+
+
+      <div class="gallery-item gallery-medium reveal">
+
+        <img
+          src="images/lounge.jpg"
+          alt="RFantazia lounge"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
+
+
+      <div class="gallery-item gallery-small reveal">
+
+        <img
+          src="images/pool.jpg"
+          alt="RFantazia pool"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
+
+
+      <div class="gallery-item gallery-small reveal">
+
+        <img
+          src="images/terrace.webp"
+          alt="RFantazia terrace"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+  class="about"
+  id="about"
+>
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-copy reveal">
+
+        <div class="section-label light-label">
+          About RFantazia
+        </div>
+
+        <h2 class="section-title">
+          More than a place.
+          It's an experience.
+        </h2>
+
+        <p>
+          RFantazia brings together food, drinks,
+          entertainment, hospitality and events
+          in one destination in Effurun.
+        </p>
+
+        <p>
+          Whether you're coming for dinner,
+          meeting friends, celebrating something
+          special or staying overnight, the
+          experience is designed around memorable
+          moments.
+        </p>
+
+      </div>
+
+
+      <div class="about-list reveal">
+
+        <div class="about-row">
+
+          <span>
+            Restaurant
+          </span>
+
+          <span>
+            ✓
+          </span>
+
+        </div>
+
+
+        <div class="about-row">
+
+          <span>
+            Lounge
+          </span>
+
+          <span>
+            ✓
+          </span>
+
+        </div>
+
+
+        <div class="about-row">
+
+          <span>
+            Hotel
+          </span>
+
+          <span>
+            ✓
+          </span>
+
+        </div>
+
+
+        <div class="about-row">
+
+          <span>
+            Events
+          </span>
+
+          <span>
+            ✓
+          </span>
+
+        </div>
+
+
+        <div class="about-row">
+
+          <span>
+            24 Hour Service
+          </span>
+
+          <span>
+            ✓
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="contact"
   id="contact"
 >
 
-  <div class="section-inner">
+  <div class="container">
 
-    <div class="location-grid">
+    <div class="contact-grid">
 
-      <div class="location-info fade-up">
+      <div class="contact-copy reveal">
 
         <div class="section-label">
           Find Us
@@ -1318,17 +2073,17 @@ footer p {
         </h2>
 
         <p>
-          UTI Junction, By DSC Express Road,
+          UTI Junction, by DSC Express Road,
           opposite NNPC Filling Station,
-          Effurun GRA, Uvwie 330102, Delta.
+          Effurun GRA, Uvwie, Delta State.
         </p>
 
 
-        <div class="contact-line">
+        <div class="contact-detail">
 
-          <strong>
-            Call
-          </strong>
+          <small>
+            Phone
+          </small>
 
           <a href="tel:08147036310">
             0814 703 6310
@@ -1337,24 +2092,24 @@ footer p {
         </div>
 
 
-        <div class="contact-line">
+        <div class="contact-detail">
 
-          <strong>
-            Open
-          </strong>
+          <small>
+            Hours
+          </small>
 
           <span>
-            24 Hours
+            Open 24 Hours
           </span>
 
         </div>
 
 
-        <div class="hero-actions">
+        <div class="hero-buttons">
 
           <a
             href="tel:08147036310"
-            class="btn btn-primary"
+            class="btn btn-gold"
           >
             Call Now
           </a>
@@ -1372,17 +2127,13 @@ footer p {
       </div>
 
 
-      <div class="map-box fade-up">
+      <div class="map reveal">
 
         <a
-          href="https://www.google.com/maps/search/?api=1&query=RFantazia+Lounge+and+Restaurant+Effurun"
+          href="https://www.google.com/maps/search/?api=1&query=RFantazia+Lounge+Restaurant+Effurun"
           target="_blank"
         >
-
-          <span>
-            Get Directions →
-          </span>
-
+          Get Directions →
         </a>
 
       </div>
@@ -1396,9 +2147,9 @@ footer p {
 </main>
 
 
-<!-- ======================================================
+<!-- =====================================================
      FOOTER
-======================================================= -->
+===================================================== -->
 
 <footer>
 
@@ -1406,28 +2157,13 @@ footer p {
 
     <div>
 
-      <div class="footer-brand">
+      <div class="footer-logo">
         RF<span>antazia</span>
       </div>
 
-      <p>
-        Lounge · Restaurant · Hotel.
+      <p class="footer-text">
+        Lounge · Restaurant · Hotel · Events.
         The evening begins in velvet.
-      </p>
-
-    </div>
-
-
-    <div class="footer-column">
-
-      <h4>
-        Visit
-      </h4>
-
-      <p>
-        UTI Junction, By DSC Express Road,
-        opposite NNPC Filling Station,
-        Effurun GRA, Uvwie 330102, Delta.
       </p>
 
     </div>
@@ -1443,20 +2179,44 @@ footer p {
         Home
       </a>
 
-      <a href="#restaurant">
-        Restaurant
-      </a>
-
-      <a href="#events">
-        Events
-      </a>
-
       <a href="#hotel">
         Hotel
       </a>
 
-      <a href="#contact">
+      <a href="#restaurant">
+        Food Menu
+      </a>
+
+      <a href="#events">
+        Book an Event
+      </a>
+
+      <a href="#gallery">
+        Gallery
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>
         Contact
+      </h4>
+
+      <a href="tel:08147036310">
+        0814 703 6310
+      </a>
+
+      <a
+        href="https://wa.me/2348147036310"
+        target="_blank"
+      >
+        WhatsApp
+      </a>
+
+      <a href="#contact">
+        Location
       </a>
 
     </div>
@@ -1466,30 +2226,35 @@ footer p {
 
   <div class="copyright">
 
-    © 2026 RFantazia Lounge & Restaurant —
-    Effurun GRA, Uvwie, Delta State
+    © 2026 RFantazia Lounge & Restaurant.
+    All rights reserved.
 
   </div>
 
 </footer>
 
 
-<!-- ======================================================
+<!-- =====================================================
      JAVASCRIPT
-======================================================= -->
+===================================================== -->
 
 <script>
 
-/* HEADER SCROLL EFFECT */
+/* HEADER */
 
-const header = document.getElementById("header");
+const header =
+document.getElementById("header");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",function(){
 
-  if (window.scrollY > 50) {
+  if(window.scrollY > 50){
+
     header.classList.add("scrolled");
-  } else {
+
+  }else{
+
     header.classList.remove("scrolled");
+
   }
 
 });
@@ -1497,101 +2262,158 @@ window.addEventListener("scroll", () => {
 
 /* MOBILE MENU */
 
-const menuBtn =
-  document.getElementById("menuBtn");
+const menuButton =
+document.getElementById("menuButton");
 
 const mobileMenu =
-  document.getElementById("mobileMenu");
+document.getElementById("mobileMenu");
 
 const closeMenu =
-  document.getElementById("closeMenu");
+document.getElementById("closeMenu");
 
 
-menuBtn.addEventListener("click", () => {
+menuButton.addEventListener("click",function(){
 
   mobileMenu.classList.add("active");
 
 });
 
 
-closeMenu.addEventListener("click", () => {
+closeMenu.addEventListener("click",function(){
 
   mobileMenu.classList.remove("active");
 
 });
 
 
-/* CLOSE MOBILE MENU WHEN LINK IS CLICKED */
-
 document
-  .querySelectorAll(".mobile-menu a")
-  .forEach(link => {
+.querySelectorAll(".mobile-menu a")
+.forEach(function(link){
 
-    link.addEventListener("click", () => {
+  link.addEventListener("click",function(){
 
-      mobileMenu.classList.remove("active");
-
-    });
+    mobileMenu.classList.remove("active");
 
   });
 
+});
 
-/* SCROLL ANIMATION */
 
-const observer =
-  new IntersectionObserver(
-    entries => {
+/* SCROLL REVEAL */
 
-      entries.forEach(entry => {
+const revealElements =
+document.querySelectorAll(".reveal");
 
-        if (entry.isIntersecting) {
+const revealObserver =
+new IntersectionObserver(function(entries){
 
-          entry.target.classList.add("visible");
+  entries.forEach(function(entry){
 
-        }
+    if(entry.isIntersecting){
 
-      });
+      entry.target.classList.add("show");
 
-    },
-    {
-      threshold: .12
+      revealObserver.unobserve(entry.target);
+
     }
+
+  });
+
+},{
+  threshold:.12
+});
+
+
+revealElements.forEach(function(element){
+
+  revealObserver.observe(element);
+
+});
+
+
+/* EVENT FORM */
+
+const eventForm =
+document.getElementById("eventForm");
+
+
+eventForm.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const name =
+  document.getElementById("eventName").value;
+
+  const phone =
+  document.getElementById("eventPhone").value;
+
+  const type =
+  document.getElementById("eventType").value;
+
+  const date =
+  document.getElementById("eventDate").value;
+
+  const guests =
+  document.getElementById("eventGuests").value;
+
+  const time =
+  document.getElementById("eventTime").value;
+
+  const message =
+  document.getElementById("eventMessage").value;
+
+
+  const whatsappMessage =
+`Hello RFantazia,
+
+I would like to book an event.
+
+Name: ${name}
+Phone: ${phone}
+Event Type: ${type}
+Date: ${date}
+Guests: ${guests}
+Preferred Time: ${time}
+
+Additional Details:
+${message}`;
+
+
+  const whatsappURL =
+  "https://wa.me/2348147036310?text="
+  + encodeURIComponent(whatsappMessage);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
   );
 
-
-document
-  .querySelectorAll(".fade-up")
-  .forEach(element => {
-
-    observer.observe(element);
-
-  });
+});
 
 
-/* SMOOTH SCROLL */
+/* SET MINIMUM EVENT DATE TO TODAY */
 
-document
-  .querySelectorAll('a[href^="#"]')
-  .forEach(anchor => {
+const dateInput =
+document.getElementById("eventDate");
 
-    anchor.addEventListener("click", function(e) {
+const today =
+new Date().toISOString().split("T")[0];
 
-      const target =
-        document.querySelector(
-          this.getAttribute("href")
-        );
+dateInput.min = today;
 
-      if (!target) return;
 
-      e.preventDefault();
+/* ESCAPE KEY CLOSES MENU */
 
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
+document.addEventListener("keydown",function(e){
 
-    });
+  if(e.key === "Escape"){
 
-  });
+    mobileMenu.classList.remove("active");
+
+  }
+
+});
 
 </script>
 
