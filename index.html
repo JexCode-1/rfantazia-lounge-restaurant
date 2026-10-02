@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>R-Fantazia | Hotel • Lounge • Restaurant • Events</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --black:#080807;
+  --dark:#11100e;
+  --cream:#f5eee4;
+  --gold:#c9a66b;
+  --gold2:#e1c38e;
+  --muted:#aaa29a;
+  --line:rgba(255,255,255,.13);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--black);
+  color:white;
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+  object-fit:cover;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  animation:introOut 1s ease 4.2s forwards;
+}
+
+.intro-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.7)),
+    url("https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-exterior.jpg.webp")
+    center/cover;
+  animation:zoom 6s ease forwards;
+}
+
+.intro-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  animation:appear 2s ease;
+}
+
+.intro-small{
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--gold2);
+  margin-bottom:22px;
+}
+
+.intro h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(60px,12vw,140px);
+  font-weight:500;
+  letter-spacing:8px;
+}
+
+.intro-location{
+  margin-top:20px;
+  letter-spacing:5px;
+  font-size:10px;
+  color:#ddd;
+}
+
+.intro-line{
+  width:70px;
+  height:1px;
+  background:var(--gold);
+  margin:28px auto;
+}
+
+@keyframes zoom{
+  from{transform:scale(1)}
+  to{transform:scale(1.08)}
+}
+
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes introOut{
+  to{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  padding:25px 5%;
+  transition:.4s;
+}
+
+header.scrolled{
+  background:rgba(8,8,7,.94);
+  backdrop-filter:blur(15px);
+  padding:16px 5%;
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:31px;
+  letter-spacing:3px;
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:var(--gold2);
+}
+
+.event-nav{
+  border:1px solid var(--gold);
+  padding:11px 17px;
+}
+
+.event-nav:hover{
+  background:var(--gold);
+  color:#000 !important;
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:27px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.82),
+      rgba(0,0,0,.38),
+      rgba(0,0,0,.55)
+    ),
+    url("https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-exterior.jpg.webp")
+    center/cover;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+  padding-top:80px;
+}
+
+.label{
+  color:var(--gold2);
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.hero h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(60px,8vw,110px);
+  line-height:.88;
+  font-weight:500;
+  max-width:900px;
+}
+
+.hero h2 em{
+  color:var(--gold2);
+}
+
+.hero p{
+  max-width:550px;
+  margin-top:30px;
+  color:#d0cbc5;
+  line-height:1.8;
+  font-size:14px;
+}
+
+.buttons{
+  display:flex;
+  gap:15px;
+  margin-top:35px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 25px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#080807;
+}
+
+.btn-gold:hover{
+  background:var(--gold2);
+  transform:translateY(-3px);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.5);
+}
+
+.btn-outline:hover{
+  border-color:var(--gold);
+  color:var(--gold2);
+}
+
+.scroll{
+  position:absolute;
+  bottom:30px;
+  left:5%;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#aaa;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+  padding:110px 5%;
+}
+
+.container{
+  max-width:1400px;
+  margin:auto;
+}
+
+.title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(45px,5vw,72px);
+  line-height:1;
+  font-weight:500;
+}
+
+.description{
+  max-width:600px;
+  margin-top:25px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+  background:var(--cream);
+  color:#111;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.about .label{
+  color:#8d6b36;
+}
+
+.about .description{
+  color:#625b53;
+}
+
+.about-image{
+  height:560px;
+  overflow:hidden;
+}
+
+.about-image img{
+  height:100%;
+  transition:.8s;
+}
+
+.about-image:hover img{
+  transform:scale(1.05);
+}
+
+.big-text{
+  font-family:"Cormorant Garamond",serif;
+  font-size:38px;
+  line-height:1.15;
+  margin-top:25px;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience{
+  background:var(--dark);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:55px;
+}
+
+.card{
+  min-height:500px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+}
+
+.card img{
+  position:absolute;
+  inset:0;
+  height:100%;
+  transition:.7s;
+}
+
+.card:hover img{
+  transform:scale(1.07);
+}
+
+.card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.card-content{
+  position:relative;
+  z-index:2;
+  padding:32px;
+}
+
+.card-number{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:42px;
+  font-weight:500;
+  margin:7px 0;
+}
+
+.card p{
+  color:#d0cbc4;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.card-link{
+  display:inline-block;
+  color:var(--gold2);
+  margin-top:18px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+
+/* =========================
+   HOTEL
+========================= */
+
+.hotel{
+  background:#eee6db;
+  color:#111;
+}
+
+.hotel-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:center;
+}
+
+.hotel-photo{
+  height:600px;
+  overflow:hidden;
+}
+
+.hotel-photo img{
+  height:100%;
+  transition:.8s;
+}
+
+.hotel-photo:hover img{
+  transform:scale(1.05);
+}
+
+.hotel .label{
+  color:#8d6b36;
+}
+
+.hotel .description{
+  color:#625b53;
+}
+
+.features{
+  border-top:1px solid #d1c5b7;
+  margin-top:35px;
+}
+
+.feature{
+  padding:17px 0;
+  border-bottom:1px solid #d1c5b7;
+  font-size:13px;
+}
+
+.feature span{
+  color:#8d6b36;
+  margin-right:15px;
+}
+
+
+/* =========================
+   FOOD
+========================= */
+
+.food{
+  background:#0b0b0a;
+}
+
+.food-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.food-photo{
+  height:570px;
+  overflow:hidden;
+}
+
+.food-photo img{
+  height:100%;
+  transition:.8s;
+}
+
+.food-photo:hover img{
+  transform:scale(1.05);
+}
+
+.food-copy{
+  padding:20px;
+}
+
+.food-copy p{
+  color:var(--muted);
+  line-height:1.8;
+  margin-top:25px;
+}
+
+
+/* =========================
+   ATMOSPHERE
+========================= */
+
+.atmosphere{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.7)),
+    url("https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-lounge.jpg.webp")
+    center/cover fixed;
+}
+
+.atmosphere h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(50px,7vw,90px);
+  font-weight:500;
+  line-height:.95;
+  max-width:850px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+  background:#080807;
+}
+
+.gallery-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:280px 280px;
+  gap:14px;
+}
+
+.gallery-item{
+  overflow:hidden;
+}
+
+.gallery-item:first-child{
+  grid-row:span 2;
+}
+
+.gallery-item img{
+  height:100%;
+  transition:.7s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.06);
+}
+
+
+/* =========================
+   EVENT BOOKING
+========================= */
+
+.events{
+  background:var(--gold);
+  color:#111;
+  text-align:center;
+}
+
+.events .label{
+  color:#554323;
+}
+
+.events h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(50px,7vw,90px);
+  font-weight:500;
+  line-height:.95;
+  max-width:900px;
+  margin:auto;
+}
+
+.events p{
+  max-width:600px;
+  margin:25px auto;
+  color:#4d402c;
+  line-height:1.8;
+}
+
+.book-button{
+  display:inline-block;
+  background:#111;
+  color:white;
+  padding:17px 30px;
+  margin-top:10px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.book-button:hover{
+  background:white;
+  color:#111;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  background:#151311;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+
+.contact-row{
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.contact-row small{
+  color:var(--gold);
+  display:block;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.contact-row p,
+.contact-row a{
+  color:#ddd;
+  font-size:14px;
+}
+
+.contact-photo{
+  height:430px;
+  overflow:hidden;
+}
+
+.contact-photo img{
+  height:100%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#050505;
+  padding:50px 5% 25px;
+}
+
+.footer{
+  max-width:1400px;
+  margin:auto;
+}
+
+.footer-logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:38px;
+  letter-spacing:3px;
+}
+
+.footer-logo span{
+  color:var(--gold);
+}
+
+.footer-bottom{
+  border-top:1px solid var(--line);
+  margin-top:35px;
+  padding-top:20px;
+  color:#666;
+  font-size:10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .nav-links{
+    position:fixed;
+    right:-100%;
+    top:0;
+    width:80%;
+    height:100vh;
+    background:#0a0a09;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px;
+    gap:25px;
+    transition:.4s;
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .nav-links a{
+    font-size:14px;
+  }
+
+  .menu{
+    display:block;
+    position:relative;
+    z-index:1001;
+  }
+
+  .about-grid,
+  .hotel-grid,
+  .food-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:250px 250px 250px;
+  }
+
+  .gallery-item:first-child{
+    grid-column:span 2;
+    grid-row:span 1;
+  }
+
+}
+
+@media(max-width:600px){
+
+  section{
+    padding:80px 5%;
+  }
+
+  .hero h2{
+    font-size:57px;
+  }
+
+  .intro h1{
+    font-size:55px;
+    letter-spacing:4px;
+  }
+
+  .about-image,
+  .hotel-photo,
+  .food-photo{
+    height:400px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(4,280px);
+  }
+
+  .gallery-item:first-child{
+    grid-column:span 1;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     INTRO SCREEN
+========================= -->
+
+<div class="intro">
+
+  <div class="intro-bg"></div>
+
+  <div class="intro-content">
+
+    <div class="intro-small">
+      Hotel • Lounge • Restaurant • Events
+    </div>
+
+    <h1>R-FANTAZIA</h1>
+
+    <div class="intro-location">
+      WARRI • NIGERIA
+    </div>
+
+    <div class="intro-line"></div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header id="header">
+
+<nav class="nav">
+
+<a href="#home" class="logo">
+R<span>-</span>FANTAZIA
+</a>
+
+<button class="menu" id="menu">
+☰
+</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#hotel">Hotel</a></li>
+
+<li><a href="#food">Food Menu</a></li>
+
+<li>
+<a href="#events" class="event-nav">
+Book an Event
+</a>
+</li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-bg"></div>
+
+<div class="hero-content">
+
+<div class="label">
+WARri • NIGERIA
+</div>
+
+<h2>
+Where moments<br>
+become <em>memories.</em>
+</h2>
+
+<p>
+Welcome to R-Fantazia — a destination for
+good food, beautiful surroundings, relaxation
+and unforgettable celebrations.
+</p>
+
+<div class="buttons">
+
+<a href="#hotel" class="btn btn-gold">
+Explore Hotel
+</a>
+
+<a href="#food" class="btn btn-outline">
+Explore Restaurant
+</a>
+
+<a href="#events" class="btn btn-outline">
+Book an Event
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+SCROLL TO EXPLORE
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+<div class="container about-grid">
+
+<div>
+
+<div class="label">
+THE R-FANTAZIA EXPERIENCE
+</div>
+
+<h2 class="title">
+More than a place.<br>
+It's an experience.
+</h2>
+
+<div class="big-text">
+A destination for food,
+relaxation, entertainment
+and memorable occasions.
+</div>
+
+<p class="description">
+R-Fantazia brings together the atmosphere
+of a lounge, the experience of dining and
+a space for people to create special memories.
+</p>
+
+</div>
+
+
+<div class="about-image">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-interior.jpg.webp"
+alt="R-Fantazia interior"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE CARDS
+========================= -->
+
+<section class="experience">
+
+<div class="container">
+
+<div class="label">
+DISCOVER R-FANTAZIA
+</div>
+
+<h2 class="title">
+Everything you need<br>
+for a memorable visit.
+</h2>
+
+
+<div class="cards">
+
+
+<!-- HOTEL -->
+
+<a href="#hotel" class="card">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-exterior.jpg.webp"
+alt="R-Fantazia hotel"
+>
+
+<div class="card-content">
+
+<div class="card-number">
+01
+</div>
+
+<h3>
+Hotel
+</h3>
+
+<p>
+Discover the hotel experience at
+R-Fantazia and explore what your
+stay could look like.
+</p>
+
+<div class="card-link">
+Explore Hotel →
+</div>
+
+</div>
+
+</a>
+
+
+
+<!-- RESTAURANT -->
+
+<a href="#food" class="card">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-lounge.jpg.webp"
+alt="R-Fantazia restaurant and lounge"
+>
+
+<div class="card-content">
+
+<div class="card-number">
+02
+</div>
+
+<h3>
+Restaurant
+</h3>
+
+<p>
+Explore the dining experience and
+discover the food menu section.
+</p>
+
+<div class="card-link">
+View Food Menu →
+</div>
+
+</div>
+
+</a>
+
+
+
+<!-- EVENTS -->
+
+<a href="#events" class="card">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-lounge.jpg (1).webp"
+alt="R-Fantazia events"
+>
+
+<div class="card-content">
+
+<div class="card-number">
+03
+</div>
+
+<h3>
+Events
+</h3>
+
+<p>
+Create your next birthday, celebration
+or special occasion at R-Fantazia.
+</p>
+
+<div class="card-link">
+Book an Event →
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HOTEL
+========================= -->
+
+<section class="hotel" id="hotel">
+
+<div class="container hotel-grid">
+
+<div class="hotel-photo">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-exterior.jpg.webp"
+alt="R-Fantazia"
+>
+
+</div>
+
+
+<div>
+
+<div class="label">
+HOTEL
+</div>
+
+<h2 class="title">
+Make your stay<br>
+part of the story.
+</h2>
+
+<p class="description">
+The R-Fantazia experience extends beyond
+dining and entertainment. Explore the hotel
+section and discover a place designed around
+your visit.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<span>01</span>
+Hospitality
+</div>
+
+<div class="feature">
+<span>02</span>
+Comfort
+</div>
+
+<div class="feature">
+<span>03</span>
+Convenience
+</div>
+
+</div>
+
+<a
+href="#"
+class="btn btn-gold"
+style="display:inline-block;margin-top:30px;"
+onclick="alert('The full hotel page will be connected here.');return false;"
+>
+Explore Hotel
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOD
+========================= -->
+
+<section class="food" id="food">
+
+<div class="container food-grid">
+
+
+<div class="food-copy">
+
+<div class="label">
+RESTAURANT
+</div>
+
+<h2 class="title">
+Good food.<br>
+Good company.<br>
+Great moments.
+</h2>
+
+<p>
+Explore the R-Fantazia dining experience.
+The full food menu can be opened from this
+section when the restaurant menu page is added.
+</p>
+
+<a
+href="#"
+class="btn btn-gold"
+style="display:inline-block;margin-top:30px;"
+onclick="alert('The full Food Menu page will be connected here.');return false;"
+>
+View Food Menu
+</a>
+
+</div>
+
+
+<div class="food-photo">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-lounge.jpg.webp"
+alt="R-Fantazia lounge"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ATMOSPHERE
+========================= -->
+
+<section class="atmosphere">
+
+<div class="container">
+
+<div class="label">
+THE ATMOSPHERE
+</div>
+
+<h2>
+Come for the moment.<br>
+Stay for the memory.
+</h2>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="gallery-top">
+
+<div>
+
+<div class="label">
+GALLERY
+</div>
+
+<h2 class="title">
+A glimpse of<br>
+R-Fantazia.
+</h2>
+
+</div>
+
+<p class="description">
+Explore the atmosphere and spaces
+that make R-Fantazia what it is.
+</p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-exterior.jpg.webp"
+alt="R-Fantazia exterior"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-interior.jpg.webp"
+alt="R-Fantazia interior"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-lounge.jpg.webp"
+alt="R-Fantazia lounge"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-pool.jpg"
+alt="R-Fantazia pool"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://raw.githubusercontent.com/JexCode-1/rfantazia-lounge-restaurant/main/images_rfantazia-lounge.jpg (1).webp"
+alt="R-Fantazia"
+>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section class="events" id="events">
+
+<div class="container">
+
+<div class="label">
+CELEBRATE AT R-FANTAZIA
+</div>
+
+<h2>
+Your occasion deserves
+a beautiful setting.
+</h2>
+
+<p>
+Planning a birthday, wedding, private celebration,
+corporate gathering or another special occasion?
+Start your event enquiry here.
+</p>
+
+<a
+href="#contact"
+class="book-bu
